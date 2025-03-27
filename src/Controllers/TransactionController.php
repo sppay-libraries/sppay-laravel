@@ -2,7 +2,6 @@
 
 namespace SPPAY\SPPAYLaravel\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use SPPAY\SPPAYLaravel\Models\Transaction;
@@ -37,6 +36,15 @@ class TransactionController extends Controller
     {
         if(count($response->transactions->data) > 0) {
             foreach($response->transactions->data as $transaction) {
+                $transaction->status = match ((int) $transaction->status_id) {
+                    1 => 'Created',
+                    2 => 'Submitted',
+                    3 => 'Processing',
+                    4 => 'Success',
+                    5 => 'Error',
+                    6 => 'Cancelled',
+                };
+
                 Transaction::updateOrCreate(['reference' => $transaction->reference],(array) $transaction);
             }
         }

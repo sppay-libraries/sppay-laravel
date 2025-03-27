@@ -2,7 +2,6 @@
 
 namespace SPPAY\SPPAYLaravel\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Arr;
 use SPPAY\SPPAYLaravel\Requests\TransferRequest;
 

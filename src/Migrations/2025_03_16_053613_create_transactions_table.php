@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('reference')->index();
             $table->string('external_reference')->nullable();
             $table->integer('primary');
+            $table->string('status')->index();
             $table->integer('status_id')->index();
             $table->string('type_code');
             $table->string('debit_account_no');
