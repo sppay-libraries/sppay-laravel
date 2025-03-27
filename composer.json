@@ -1,0 +1,27 @@
+{
+    "name": "sppay/sppay-laravel",
+    "description": "An application that helps you easily integrate with SSPAY Payment APIs",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SPPAY\\SPPAYLaravel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Emmanuel Oteng Wilson",
+            "email": "hagioswilson@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SPPAY\\SPPAYLaravel\\SppayLaravelServiceProvider"
+            ]
+        }
+    }
+}
